@@ -44,8 +44,9 @@ $: if (isAutoResetEnabled) {
       Reset
     </button>
     <button type="button" class="btn btn-accent" on:click={() => dispatch(store.dispatch(decrementCounter()))}>
-      Decrement
-    </button>
+  Decrement
+</button>
+    
   </div>
   <div class="flex items-center mt-4">
   <label for="auto-reset">Auto Reset:</label>
