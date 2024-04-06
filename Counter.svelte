@@ -47,6 +47,10 @@ $: if (isAutoResetEnabled) {
       Decrement
     </button>
   </div>
+  <div class="flex items-center mt-4">
+  <label for="auto-reset">Auto Reset:</label>
+  <input type="checkbox" id="auto-reset" bind:checked={isAutoResetEnabled} />
+  </div>
 </div>
 <style>
 
