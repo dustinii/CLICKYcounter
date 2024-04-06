@@ -1,8 +1,30 @@
 <script>
   import { useDispatch, useSelector } from 'react-redux';
   import store from '../store';
+  import { interval } from 'svelte';
 
+  let timerId;
+  
   export let count;
+  export let isAutoResetEnabled = false;
+  
+  const startTimer = () => {
+  timerId = interval(() => {
+    dispatch(store.dispatch(resetCounter()));
+  }, 5000); // Reset every 5 seconds
+};
+
+const stopTimer = () => {
+  if (timerId) {
+    clearInterval(timerId);
+  }
+};
+
+$: if (isAutoResetEnabled) {
+  startTimer();
+} else {
+  stopTimer();
+}
 </script>
 
 <div class="flex flex-col items-center justify-center h-screen">
